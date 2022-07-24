@@ -1,4 +1,4 @@
-import { motion, useAnimation, useViewportScroll } from "framer-motion";
+import { motion, useAnimation, useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link, useMatch } from "react-router-dom";
 import styled from "styled-components"
@@ -121,7 +121,7 @@ function NavBar() {
     const homeURLMatch = useMatch("/");
     const [moveSearchBar, setMoveSearchBar] = useState(false);
     const navAnimation = useAnimation();
-    const {scrollY} = useViewportScroll();
+    const {scrollY} = useScroll();
     const startSearch = () => {
         setMoveSearchBar((prev) => !prev);
     };
